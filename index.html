@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Priscilla Wambui's portfolio of business automation, workflow design, integrations and AI-powered systems.">
+  <title>Priscilla Wambui | Business Automation</title>
+
+  <style>
+    :root {
+      --navy: #17233d;
+      --purple: #7965c1;
+      --light-purple: #f1edfb;
+      --text: #4c5568;
+      --muted: #788195;
+      --white: #ffffff;
+      --background: #faf9fd;
+      --border: #e9e7f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -0.7px;
+    }
+
+    .logo span {
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .hero {
+      padding: 110px 0 100px;
+      background:
+        radial-gradient(circle at 85% 15%, #eee9fb 0, transparent 30%),
+        var(--white);
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--purple);
+    }
+
+    .hero-description {
+      max-width: 620px;
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 7px;
+      background: var(--navy);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: var(--purple);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid var(--border);
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: 34px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+    }
+
+    .about-note {
+      background: var(--light-purple);
+      padding: 28px;
+      border-radius: 12px;
+      color: var(--navy);
+      border: 1px solid #e8e1fa;
+    }
+
+    .about-note h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .about-note p {
+      font-size: 14px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+    }
+
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .projects {
+      background: white;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+      background: var(--background);
+      max-width: 760px;
+    }
+
+    .project-visual {
+      background: linear-gradient(135deg, #202c49, #7664b8);
+      color: white;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .project-visual .symbol {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .project-visual h3 {
+      font-size: 23px;
+    }
+
+    .project-content {
+      padding: 30px;
+    }
+
+    .project-content h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      background: var(--light-purple);
+      color: #6653a9;
+      border-radius: 30px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .credential {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 19px;
+    }
+
+    .credential h3 {
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .credential p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .contact h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #d0d5e1;
+      margin-bottom: 25px;
+    }
+
+    .contact .button {
+      background: white;
+      color: var(--navy);
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      background: #111b30;
+      color: #aeb7c8;
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .credentials {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#">PW<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Business Automation & Digital Systems</p>
+
+        <h1>
+          Priscilla Wambui.<br>
+          <span>Making systems work better.</span>
+        </h1>
+
+        <p class="hero-description">
+          I enjoy understanding how businesses operate, finding the
+          gaps between their processes and building practical ways
+          to make things work more smoothly.
+        </p>
+
+        <a href="#projects" class="button">Explore my work</a>
+        <a href="#about" class="button button-outline">A little about me</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A little about me</p>
+          <h2>Curiosity meets problem-solving.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              My interest in automation comes from a simple question:
+              why should people keep doing manually what a well-designed
+              system could help them do more efficiently?
+            </p>
+
+            <p>
+              I enjoy taking a process apart, understanding how its
+              different pieces fit together, and exploring how technology
+              can connect them.
+            </p>
+
+            <p>
+              My work and learning currently span workflow automation,
+              no-code and low-code development, application integrations,
+              data management and AI-powered systems.
+            </p>
+
+            <p>
+              I use this space to document what I build, the problems
+              I explore and how my approach develops with every project.
+            </p>
+          </div>
+
+          <div class="about-note">
+            <h3>How I think about automation</h3>
+            <p>
+              Start with the process, not the tool. Understand what
+              needs to happen, identify what can be improved, then
+              build a solution that makes sense.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Areas of focus</p>
+          <h2>What I'm exploring and building.</h2>
+          <p>
+            A growing set of skills focused on connecting systems
+            and improving how work gets done.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Workflow Automation</h3>
+            <p>Designing connected workflows that reduce repetitive
+              tasks and manual handovers.</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Business Systems</h3>
+            <p>Structuring business information, processes and
+              operational records.</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>AI-Powered Solutions</h3>
+            <p>Exploring practical ways to bring AI into workflows
+              and everyday business operations.</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Integrations</h3>
+            <p>Connecting applications and exploring how data
+              moves between different platforms.</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Data & Reporting</h3>
+            <p>Organising information to make tracking,
+              reconciliation and reporting easier.</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Process Improvement</h3>
+            <p>Looking at existing processes and identifying
+              opportunities to make them work better.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Things I've been building.</h2>
+          <p>
+            Practical projects that explore real business
+            processes and possible improvements.
+          </p>
+        </div>
+
+        <article class="project-card">
+          <div class="project-visual">
+            <div class="symbol">↔</div>
+            <h3>Payment Reconciliation System</h3>
+            <p>Payments · Invoices · Tracking</p>
+          </div>
+
+          <div class="project-content">
+            <h3>Stripe Payment Reconciliation</h3>
+
+            <p>
+              A portfolio project exploring how payment records
+              can be organised and checked against invoices.
+              The system uses structured payment data, formulas,
+              lookups and reconciliation views to identify
+              matching amounts, discrepancies and duplicate records.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Airtable</span>
+              <span class="tag">Stripe</span>
+              <span class="tag">Make.com</span>
+              <span class="tag">Workflow Automation</span>
+              <span class="tag">Data Management</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Learning & development</p>
+          <h2>Building knowledge along the way.</h2>
+          <p>
+            Selected certifications and training supporting
+            my development in automation and digital systems.
+          </p>
+        </div>
+
+        <div class="credentials">
+          <div class="credential">
+            <h3>Make Foundation</h3>
+            <p>Make</p>
+          </div>
+
+          <div class="credential">
+            <h3>Airtable Builder Certification</h3>
+            <p>Airtable</p>
+          </div>
+
+          <div class="credential">
+            <h3>Airtable Admin Certification</h3>
+            <p>Airtable</p>
+          </div>
+
+          <div class="credential">
+            <h3>Airtable Agentic Systems Design</h3>
+            <p>Airtable</p>
+          </div>
+
+          <div class="credential">
+            <h3>Airtable No Code AI App Builder</h3>
+            <p>Airtable</p>
+          </div>
+
+          <div class="credential">
+            <h3>AI Automation Master Class</h3>
+            <p>Koka Academy Ltd</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Have a process worth improving?</h2>
+      <p>
+        I'm always interested in exploring practical
+        solutions to business problems.
+      </p>
+
+      <a
+        class="button"
+        href="https://www.linkedin.com/in/priscillawandia/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Connect on LinkedIn
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Priscilla Wambui. Built with curiosity and code.
+  </footer>
+
+</body>
+</html>
